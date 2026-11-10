@@ -1,0 +1,5 @@
+{
+  "name": "claude-sesiones",
+  "owner": { "name": "darwin-elegiga" },
+  "plugins": [{ "name": "sesiones", "source": "./" }]
+}
