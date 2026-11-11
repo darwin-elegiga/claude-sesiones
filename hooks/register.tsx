@@ -390,9 +390,9 @@ export const register: Register = on => {
     const boss = typeof args.worksFor === 'string' ? args.worksFor : undefined
     await setRole($, role, boss)
     const said = [self.role && `rol «${self.role}»`, self.worksFor && `trabaja para «${self.worksFor}»`].filter(Boolean).join(', ')
+    // An MCP-style tool's output is text (or content blocks), never a record: core sets `text` itself.
     return {
-      result: { role: self.role ?? null, worksFor: self.worksFor ?? null, isOnBoard: run.joined },
-      text: run.joined ? `Tablero actualizado: ${said || 'sin rol'}.` : `Guardado (${said || 'sin rol'}); esta sesión aún no está en el tablero.`,
+      result: run.joined ? `Tablero actualizado: ${said || 'sin rol'}.` : `Guardado (${said || 'sin rol'}); esta sesión aún no está en el tablero.`,
     }
   })
 

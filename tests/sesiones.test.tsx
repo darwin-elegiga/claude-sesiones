@@ -252,7 +252,7 @@ test('on joining, the model is told to name its role, and its tool call reaches 
   expect(JSON.stringify(note?.message.content).includes('mcp__sesiones__rol')).toBe(true)
 
   const r = await $.tool.call({ tool: 'mcp__sesiones__rol', role: 'revisora de tests', worksFor: 'ejecutora' } as never)
-  expect((r as { text?: string }).text).toBe('Tablero actualizado: rol «revisora de tests», trabaja para «ejecutora».')
+  expect((r as { result?: unknown }).result).toBe('Tablero actualizado: rol «revisora de tests», trabaja para «ejecutora».')
   const published = JSON.parse(writes.filter(w => !w.path.includes('/presence/')).at(-1)!.text) as SessionCard
   expect(published.role).toBe('revisora de tests')
   expect(published.worksFor).toBe('ejecutora')
