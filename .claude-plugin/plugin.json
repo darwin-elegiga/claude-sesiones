@@ -1,6 +1,6 @@
 {
   "name": "sesiones",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "/sesiones opens an animated board of every Claude Code session on this machine: what each one is doing, its subagents, and the messages they send each other.",
   "types": "./types/index.d.ts"
 }
